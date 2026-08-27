@@ -1,0 +1,147 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background-color: #f3f2ef;
+}
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 220px;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+  background-color: #172b4d;
+  color: white;
+}
+
+.sidebar-brand {
+  padding: 0 0.75rem 1.5rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  color: #d9e2f2;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link.active {
+  background-color: #0a66c2;
+  color: white;
+}
+
+.main-content {
+  margin-left: 220px;
+}
+
+.header {
+  background-color: #0a66c2;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls select {
+  margin-left: 0.5rem;
+}
+
+.feed {
+  padding: 1rem;
+}
+
+.post {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-author {
+  font-weight: bold;
+}
+
+.post-role {
+  font-size: 0.85rem;
+  color: gray;
+}
+
+.post-actions {
+  margin-top: 0.5rem;
+}
+
+.post-actions button {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.post-actions button:hover {
+  background-color: #f3f2ef;
+}
+
+.post-actions button.liked {
+  background-color: #0a66c2;
+  color: white;
+  font-weight: bold;
+  border: 2px solid #0a66c2;
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    width: 76px;
+    padding: 1rem 0.5rem;
+  }
+
+  .sidebar-brand {
+    overflow: hidden;
+    padding: 0 0 1.5rem;
+    text-align: center;
+    text-indent: -9999px;
+  }
+
+  .sidebar-brand::after {
+    content: "P";
+    display: block;
+    text-indent: 0;
+    font-size: 1.35rem;
+  }
+
+  .nav-link {
+    justify-content: center;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .nav-link span:last-child {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 76px;
+  }
+}
