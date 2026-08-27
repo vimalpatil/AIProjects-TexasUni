@@ -3,6 +3,16 @@
   --text: #222;
   --card: #ffffff;
   --accent: #2575fc;
+  --header-text: #ffffff;
+  --button-bg: #ffffff;
+  --button-text: #222;
+  --sidebar-bg: #eef2ff;
+  --sidebar-text: #1f2937;
+  --footer-bg: #f3f4f6;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -10,6 +20,26 @@ body {
   font-family: system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+body.dark-mode {
+  --bg: #121826;
+  --text: #e5e7eb;
+  --card: #1f2937;
+  --accent: #7dd3fc;
+  --header-text: #f3f4f6;
+  --button-bg: #1f2937;
+  --button-text: #f3f4f6;
+  --sidebar-bg: #1f2937;
+  --sidebar-text: #f3f4f6;
+  --footer-bg: #0f172a;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -18,12 +48,73 @@ body {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(90deg, #6a11cb, #2575fc);
-  color: white;
+  color: var(--header-text);
 }
 
 .controls {
   display: flex;
   gap: 12px;
+  align-items: center;
+}
+
+.theme-toggle {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.content-shell {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 220px;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 24px 18px;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+.nav-item.active,
+.nav-item:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.main-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 .course-grid {
@@ -64,4 +155,34 @@ body {
   color: var(--accent);
 }
 
-/* Dark mode styles will be added here */
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 18px 24px;
+  background: var(--footer-bg);
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .content-shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
