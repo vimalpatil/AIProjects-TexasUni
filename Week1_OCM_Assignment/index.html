@@ -1,0 +1,55 @@
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnHub | Online Courses</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="header">
+      <h1>📚 LearnHub</h1>
+      <div class="controls">
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+          <option value="programming">Programming</option>
+          <option value="design">Design</option>
+          <option value="business">Business</option>
+        </select>
+
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light and dark mode">
+          🌙 Dark
+        </button>
+      </div>
+    </header>
+
+    <div class="content-shell">
+      <aside class="sidebar" aria-label="Sidebar navigation">
+        <div class="brand">LearnHub</div>
+        <nav class="sidebar-nav">
+          <a href="#" class="nav-item active">Home</a>
+          <a href="#" class="nav-item">My Courses</a>
+          <a href="#" class="nav-item">Saved</a>
+          <a href="#" class="nav-item">Progress</a>
+        </nav>
+      </aside>
+
+      <div class="main-panel">
+        <main>
+          <section id="courseList" class="course-grid"></section>
+        </main>
+
+        <footer class="footer-nav">
+          <a href="#">About</a>
+          <a href="#">Courses</a>
+          <a href="#">Support</a>
+          <a href="#">Privacy</a>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
