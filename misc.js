@@ -10,10 +10,10 @@ function factorial(n) {
   return n * factorial(n - 1);
 }           
 // Exercise 2: Array Operations
-const numbers = [1, 2, 3, 4, 5];
+const numList = [1, 2, 3, 4, 5];
 
 // Filter even numbers
-const evenNumbers = numbers.filter(num => num % 2 === 0);
+const evenNumbers = numList.filter(num => num % 2 === 0);
 
 
 
@@ -26,4 +26,28 @@ function reverseString(str) {
 
     
 
-// Exercise 4: Process User Data 
+// Exercise 4: Process User Data    
+
+function processUserData(users) {
+  if (!Array.isArray(users)) {
+    throw new TypeError('users must be an array');
+  }
+
+  return users
+    .filter((user) => {
+      if (!user || typeof user !== 'object') {
+        return false;
+      }
+      const { age, name, email } = user;
+      return (
+        typeof age === 'number' &&
+        !Number.isNaN(age) &&
+        age >= 18 &&
+        typeof name === 'string' &&
+        name.trim().length > 0 &&
+        typeof email === 'string' &&
+        email.trim().length > 0
+      );
+    })
+    .map(({ name, email }) => ({ name, email }));
+}
